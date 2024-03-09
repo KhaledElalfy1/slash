@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:slash/core/widgets/custom_network_image.dart';
@@ -24,7 +22,7 @@ class Home extends StatelessWidget {
       body: GridView.builder(
         // itemCount: 4,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, childAspectRatio: .6, mainAxisSpacing: 10.h),
+            crossAxisCount: 2, childAspectRatio: .7, mainAxisSpacing: 10.h),
         itemBuilder: (context, index) => const CustomProductCard(),
       ),
     );
@@ -46,26 +44,28 @@ class CustomProductCard extends StatelessWidget {
       ),
       child: Column(
         children: [
-         const CustomNetworkImage(imageUrl:'https://firebasestorage.googleapis.com/v0/b/slash-d7546.appspot.com/o/categories%2Fcanvas.png?alt=media&token=348aae1e-d4df-43f5-9d48-c50dbf5abb26',
-                  ),
+          Gap(10.h),
+          const CustomNetworkImage(
+            imageUrl:
+                'https://firebasestorage.googleapis.com/v0/b/slash-d7546.appspot.com/o/images%2Fproduct-variants%2F1695658097880IMG_20230202_011736.jpg?alt=media&token=bb42aaf1-ac00-4f95-9864-370ef010ad1e',
+          ),
+          Gap(10.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-             const Expanded(
-                  child:  Text(
+              const Expanded(
+                  child: Text(
                       'Brand NAme and just to show it fd fdff fdfd frgr tg gf  fferfrfr grgr ed r grgrg  ')),
               ClipRRect(
                 borderRadius: BorderRadius.circular(16),
                 child: const CircleAvatar(
-                  radius: 15,
-                  backgroundColor: Colors.green,
-                  child:CustomNetworkImage(imageUrl:'https://firebasestorage.googleapis.com/v0/b/slash-d7546.appspot.com/o/categories%2Fcanvas.png?alt=media&token=348aae1e-d4df-43f5-9d48-c50dbf5abb26',
-                  )
-                  //  Image.network(
-                  //   'https://firebasestorage.googleapis.com/v0/b/slash-d7546.appspot.com/o/categories%2Fcanvas.png?alt=media&token=348aae1e-d4df-43f5-9d48-c50dbf5abb26',
-                  // ),
-                ),
-              )
+                    radius: 15,
+                    backgroundColor: Colors.green,
+                    child: CustomNetworkImage(
+                      imageUrl:
+                          'https://firebasestorage.googleapis.com/v0/b/slash-d7546.appspot.com/o/images%2Fproduct-variants%2F1695658097880IMG_20230202_011736.jpg?alt=media&token=bb42aaf1-ac00-4f95-9864-370ef010ad1e',
+                    )),
+              ),
             ],
           ),
           const Spacer(),
@@ -73,15 +73,21 @@ class CustomProductCard extends StatelessWidget {
             children: [
               const Text('EGP 365 '),
               const Spacer(),
-              const Icon(Icons.favorite_border_outlined),
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.favorite_border_outlined),
+              ),
               Gap(10.w),
-              const Icon(
-                Icons.shopping_cart,
-                color: Colors.grey,
-              )
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.shopping_cart,
+                  color: Colors.grey,
+                ),
+              ),
             ],
           ),
-          Gap(20.h),
+          // Gap(10.h)
         ],
       ),
     );
