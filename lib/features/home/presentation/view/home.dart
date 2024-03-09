@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:slash/core/widgets/custom_network_image.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -45,23 +46,24 @@ class CustomProductCard extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Image.network(
-            'https://firebasestorage.googleapis.com/v0/b/slash-d7546.appspot.com/o/categories%2Fcanvas.png?alt=media&token=348aae1e-d4df-43f5-9d48-c50dbf5abb26',
-          ),
+         const CustomNetworkImage(imageUrl:'https://firebasestorage.googleapis.com/v0/b/slash-d7546.appspot.com/o/categories%2Fcanvas.png?alt=media&token=348aae1e-d4df-43f5-9d48-c50dbf5abb26',
+                  ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Expanded(
-                  child: const Text(
+             const Expanded(
+                  child:  Text(
                       'Brand NAme and just to show it fd fdff fdfd frgr tg gf  fferfrfr grgr ed r grgrg  ')),
               ClipRRect(
                 borderRadius: BorderRadius.circular(16),
-                child: CircleAvatar(
+                child: const CircleAvatar(
                   radius: 15,
                   backgroundColor: Colors.green,
-                  child: Image.network(
-                    'https://firebasestorage.googleapis.com/v0/b/slash-d7546.appspot.com/o/categories%2Fcanvas.png?alt=media&token=348aae1e-d4df-43f5-9d48-c50dbf5abb26',
-                  ),
+                  child:CustomNetworkImage(imageUrl:'https://firebasestorage.googleapis.com/v0/b/slash-d7546.appspot.com/o/categories%2Fcanvas.png?alt=media&token=348aae1e-d4df-43f5-9d48-c50dbf5abb26',
+                  )
+                  //  Image.network(
+                  //   'https://firebasestorage.googleapis.com/v0/b/slash-d7546.appspot.com/o/categories%2Fcanvas.png?alt=media&token=348aae1e-d4df-43f5-9d48-c50dbf5abb26',
+                  // ),
                 ),
               )
             ],
